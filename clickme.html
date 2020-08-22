@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    body{
+    background-color: green;
+}
+.clickme{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: 2px solid black;
+    cursor: pointer;
+    color: black;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        
+    
+        <h1 class="clickme">
+                CLICK ME
+        </h1>
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+        $(document).ready(()=>{
+        let colonum = 1;
+        let colors = ["green", "blue", "red", "white", "yellow"];
+        $('.clickme').on('click',()=>{
+            
+            $('body').css('background-color', colors[colonum]);
+            if(colonum< colors.length-1){
+                $('.clickme').html(colors[colonum]);
+                colonum = colonum+1
+                
+            }
+            else{
+                $('.clickme').html(colors[colonum]);
+                colonum = 0;
+                
+            }
+            
+            }
+            
+        )
+    }
+    )
+</script>
+    </body>
+</html>
